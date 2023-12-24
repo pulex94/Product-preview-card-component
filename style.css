@@ -1,6 +1,6 @@
 * {
   padding: 0px;
-  margin: 10px;
+
   font-family: "Montserrat", sans-serif;
 }
 
@@ -10,37 +10,69 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  overflow: hidden;
 }
 
-.container {
-  width: 560px;
-  height: 420px;
-  display: flex;
-  background-color: white;
-  border-radius: 15px;
+.mobileImg {
+  display: none;
 }
-
-#chanel-img {
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-}
-
 .div-left {
   width: 280px;
-  margin: 0px;
   background-color: white;
 }
-
 .div-right {
   width: 280px;
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  padding: 20px;
   background-color: white;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+#chanel-img {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+@media only screen and (max-width: 425px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    width: 100%;
+    height: 100%; /* Add this if you want it to take full width */
+  }
+  .div-left {
+    width: 320px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+  }
+  .div-right {
+    border-radius: 0px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  .mobileImg {
+    display: flex;
+    max-width: 100%;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+  }
+  .desktopImg {
+    display: none;
+  }
+
+  /* Move the closing bracket here */
+}
+
+/* Move the styles for .container outside the media query */
+.container {
+  width: 560px;
+  height: 420px;
+  display: flex;
+  border-radius: 15px;
 }
 
 p {
@@ -83,4 +115,8 @@ button {
 
 button:hover {
   background-color: hsl(214, 25%, 27%);
+}
+
+#moneyTitle {
+  margin-right: 40px;
 }
